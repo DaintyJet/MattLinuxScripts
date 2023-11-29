@@ -33,6 +33,6 @@ echo "============================================="
 echo "           Updating Icon and Menu            "
 echo "============================================="
 
-sed -i "s#Exec=*#Exec=/usr/bin/Discord#g" /opt/Discord/discord.desktop
-sed -i "s#Icon=*#Icon=/opt/Discord/discord.png#g" /opt/Discord/discord.desktop
+sed -i "s#Exec=.*#Exec=/usr/bin/Discord#g" /opt/Discord/discord.desktop
+sed -i "s#Icon=.*#Icon=/opt/Discord/discord.png#g" /opt/Discord/discord.desktop
 cp -r /opt/Discord/discord.desktop /usr/share/applications
