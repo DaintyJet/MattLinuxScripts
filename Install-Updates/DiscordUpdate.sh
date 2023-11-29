@@ -10,12 +10,12 @@ echo "============================================="
 echo "               Unpacking Discord             "
 echo "============================================="
 
-if (( $(ls ~/Downloads | grep -i "discord.*.tar.gz" | wc -l) == 0)); then
+if (( $(ls /home/$SUDO_USER/Downloads | grep -i "discord.*.tar.gz" | wc -l) == 0)); then
     echo "Please Put the tar.gz Discord file into the Downloads Folder!"
     exit 1
 fi
 
-tar -xvzf "~Downloads/$(ls /Downloads | grep -i "discord*.tar.gz")" -C /opt
+tar -xvzf "/home/$SUDO_USER/Downloads/$(ls /home/$SUDO_USER/Downloads | grep -i "discord.*.tar.gz")" -C /opt
 
 echo "============================================="
 echo "               Updating Sym Link            "
@@ -26,7 +26,7 @@ if(( $(ls /opt | grep -i "Discord" | wc -l) == 0 )); then
     exit 1
 fi
 
-sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
+ln -sf /opt/Discord/Discord /usr/bin/Discord
 
 
 echo "============================================="
